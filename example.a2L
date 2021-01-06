@@ -1,0 +1,201 @@
+      /begin COMPU_METHOD _CNV_A_R_LINEAR_____40_CM
+         ""
+         RAT_FUNC
+         "%6.3"
+         "-"
+         COEFFS 0 16384. 0. 0 0 1
+      /end COMPU_METHOD
+
+      /begin MEASUREMENT AntiTrmp_Bits_10MS.AntiTrmp_bDetTrmpDrvOff_VW
+         "flag drive off tramp detected"
+         UBYTE
+         _CNV_S_2_xaiedFa_Eh_259_CM
+         1
+         100.
+         0.
+         1.
+         DISPLAY_IDENTIFIER AntiTrmp_bDetTrmpDrvOff_VW
+         ECU_ADDRESS 0xd001a79a
+         BIT_MASK 0x1           /* 1 */
+         /begin IF_DATA ETK
+            KP_BLOB
+            0xd001a79a
+            INTERN
+            1
+            RASTER 1
+            RASTER 2
+            RASTER 3
+            RASTER 4
+            RASTER 30
+         /end IF_DATA
+      /end MEASUREMENT
+
+      /begin COMPU_METHOD _CNV_A_R_LINEAR_____202_CM
+         ""
+         RAT_FUNC
+         "%6.3"
+         "%/hPa"
+         COEFFS 0 256. 0. 0 0 1
+      /end COMPU_METHOD
+
+      /begin COMPU_METHOD _CNV_A_R_CHRG_LINEA_203_CM
+         ""
+         RAT_FUNC
+         "%6.3"
+         "%"
+         COEFFS 0 163.84 32768. 0 0 1
+      /end COMPU_METHOD
+
+      /begin COMPU_METHOD _CNV_A_R_LINEAR_____204_CM
+         ""
+         RAT_FUNC
+         "%6.3"
+         "-"
+         COEFFS 0 16384. 32768. 0 0 1
+      /end COMPU_METHOD
+
+      /begin COMPU_METHOD _CNV_A_R_LINEAR_____205_CM
+         ""
+         RAT_FUNC
+         "%6.3"
+         "s/m"
+         COEFFS 0 3181017.284813537 0. 0 0 1
+      /end COMPU_METHOD
+
+
+      /begin AXIS_PTS ldp_fac_1_ip_fac_bpa_sp
+      	""
+         0xa08196fa
+         fac_1_put_ad
+         _REC_A2AXS_20_U2
+         3.99993896484375
+         _CNV_A_R_LINEAR_____40_CM
+         16
+         0.
+         3.99993896484375
+         FORMAT "%7.5"
+         /begin IF_DATA ETK
+            DP_BLOB
+            0xa08196fa
+            34
+         /end IF_DATA
+      /end AXIS_PTS
+
+
+      /begin AXIS_PTS ldp_fac_2_ip_fac_bpa_sp
+      	""
+         0xa0819748
+         fac_2_put_ad
+         _REC_A2AXS_20_U2
+         3.99993896484375
+         _CNV_A_R_LINEAR_____40_CM
+         10
+         0.
+         3.99993896484375
+         FORMAT "%7.5"
+         /begin IF_DATA ETK
+            DP_BLOB
+            0xa0819748
+            22
+         /end IF_DATA
+      /end AXIS_PTS
+
+
+      /begin CHARACTERISTIC ip_fac_bpa_sp[0]
+      	"Map for boost pressure actuator setpoint"
+         MAP
+         0xa08199f6
+         _REC_A1MAP_20_U2_U2_U2
+         3.99993896484375
+         _CNV_A_R_LINEAR_____204_CM
+         -2.
+         1.99993896484375
+         DISPLAY_IDENTIFIER IP_FAC_BPA_SP[0]
+         FORMAT "%8.5"
+         /begin AXIS_DESCR
+            COM_AXIS
+            fac_1_put_ad
+            _CNV_A_R_LINEAR_____40_CM
+            16
+            0.
+            3.99993896484375
+            FORMAT "%7.5"
+            AXIS_PTS_REF ldp_fac_1_ip_fac_bpa_sp
+         /end AXIS_DESCR
+         /begin AXIS_DESCR
+            COM_AXIS
+            fac_2_put_ad
+            _CNV_A_R_LINEAR_____40_CM
+            10
+            0.
+            3.99993896484375
+            FORMAT "%7.5"
+            AXIS_PTS_REF ldp_fac_2_ip_fac_bpa_sp
+         /end AXIS_DESCR
+         /begin IF_DATA ETK
+            DP_BLOB
+            0xa08199f6
+            320
+         /end IF_DATA
+      /end CHARACTERISTIC
+
+
+      /begin MEASUREMENT ang_neut_gear
+         "Neutralgang-Schaltwinkel"
+         SWORD
+         _CNV_A_R_LINEAR_____1168_CM
+         1
+         100.
+         -180.
+         179.994507
+         DISPLAY_IDENTIFIER ANG_NEUT_GEAR
+         ECU_ADDRESS 0xd0015494
+         FORMAT "%6.3"
+         /begin IF_DATA ETK
+            KP_BLOB
+            0xd0015494
+            INTERN
+            2
+            RASTER 30
+         /end IF_DATA
+      /end MEASUREMENT
+
+      /begin MEASUREMENT ang_neut_gear_ad_neut
+         "Neutralstellung-Adaptionswert"
+         SWORD
+         _CNV_A_R_LINEAR_____1168_CM
+         1
+         100.
+         -180.
+         179.994507
+         DISPLAY_IDENTIFIER ANG_NEUT_GEAR_AD_NEUT
+         ECU_ADDRESS 0xd0015496
+         FORMAT "%6.3"
+         /begin IF_DATA ETK
+            KP_BLOB
+            0xd0015496
+            INTERN
+            2
+            RASTER 30
+         /end IF_DATA
+      /end MEASUREMENT
+
+      /begin MEASUREMENT ang_neut_gear_ad_neut_a[0]
+         "Speicher fuer Adaptionswerte Neutralstellung"
+         SWORD
+         _CNV_A_R_LINEAR_____1168_CM
+         1
+         100.
+         -180.
+         179.994507
+         DISPLAY_IDENTIFIER ANG_NEUT_GEAR_AD_NEUT_A[0]
+         ECU_ADDRESS 0xd0015498
+         FORMAT "%6.3"
+         /begin IF_DATA ETK
+            KP_BLOB
+            0xd0015498
+            INTERN
+            2
+            RASTER 30
+         /end IF_DATA
+      /end MEASUREMENT
